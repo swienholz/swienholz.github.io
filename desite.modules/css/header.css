@@ -1,0 +1,64 @@
+header {
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bim4ceGreyBlueLight);
+    height: 85px;
+  }
+  
+  #logo {
+    margin-left: 18px;
+height: 30px !important;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  #user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45px;
+    min-width: 45px !important;
+  
+    border-radius: 4px;
+    background-color: var(--bim4ceBG);
+    color: var(--bim4ceGreen);
+  }
+  
+  .headerDiv:hover>#user {
+    color: var(--bim4ceText) !important;
+  }
+  
+  .headerDiv {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
+    /* width: 45px; */
+  }
+  
+  #userAuswahl {
+    margin-right: 13px;
+  }
+  
+  .headerDiv:hover {
+    /* background-color: var(--bim4ceBGgreen) !important; */
+    cursor: pointer;
+  }
+  
+  .headerSpan span {
+    margin-left: 15px;
+    color: var(--bim4ceText);
+    font-size: 20px;
+    cursor: default;
+  }
+  
+  .logoundText {
+    display: flex;
+    align-items: center;
+  }
+  
+  #logo {
+   cursor: pointer !important;
+  }

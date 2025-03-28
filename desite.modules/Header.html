@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 270px;
+            margin-bottom: 10px;
+        }
+        .header {
+            font-size: 1.5rem;
+            color: #000000;
+            text-align: center;
+        }
+        .sub-header {
+            font-size: 1.0rem;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <img src="images/SPd.png" alt="SPd Logo" class="logo">
+
+    <!-- Header -->
+    <div class="header">Please select a sensor object to view its data.</div>
+    <div class="sub-header">Ensure you select a valid sensor object in desite.</div>
+
+</body>
+</html>

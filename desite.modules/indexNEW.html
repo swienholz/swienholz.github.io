@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BIM4CE</title>
+    <!-- css files-->
+    <link rel="stylesheet" type="text/css" href="css/html.css" />
+    <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<header class="flexboxRow">
+    <div class="logoundText">
+        <a title="Logo interreg-central" target="_blank">
+            <img class="logo" src="images/interreg2.svg" id="logo" />
+        </a>
+
+        <!-- <a class="headerSpan" title="BIM4CE">
+            <span>BIM4CE</span>
+        </a> -->
+    </div>
+    <div class="flexboxRow ">
+        <!-- <a class="headerDiv" title="www.interreg-central.eu/projects/bim4ce/" id="begebimA">
+            <img class="logo" src="images/NrNetz.svg" id="begebimLogo" />
+        </a> -->
+        <div class="headerDiv">
+
+            <a title="BIM4CE" target="_blank">
+                <img class="logo" src="images/bim4ce.svg" id="logo2" />
+            </a>
+        </div>
+        <div class="headerDiv" id="userAuswahl" title="User settings: Nasim Didehvar">
+            <div id="user">
+                <span id="userSpan" style="font-weight:600;">D</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader" style="display: none">
+        <div class="loader-content">
+            <!-- <div class="spinner"></div> -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <p id="loader-text">Ladevorgang...</p>
+        </div>
+    </div>
+
+    <div class="Formular">
+        <div style="margin-left: 20px; margin-right: 20px;" class="flexboxRow spaceOben10" id="Projektueberschrift">
+            <h1 title="Show projectdata" id="spanProjectname">Bridgename</h1>
+            <h2 id="spanProjectdate">Date</h2>
+        </div>
+        <hr style="margin-left: 15px; margin-right: 15px;">
+
+        <details class="spaceOben20" open>
+            <summary class="flexboxRow">
+                <div>Bridge-related data
+                </div>
+            </summary>
+            <div class="single_page_subcontainer subcontainer_inside_details ">
+                <span>Information about the bridge</span>
+
+                <div class="flexboxRow">
+                    <table style="border: 0px;" cellspacing="0" id="bridgeDataTbl">
+                        <tbody>
+                            <tr>
+                                <td style="color:var(--bim4ceText); text-align: left; border-top: 0px;">Name: </td>
+                                <td style="border-top: 0px;" id="tdBridgeName"></td>
+                            </tr>
+                            <tr>
+                                <td style="color:var(--bim4ceText); text-align: left;">Date: </td>
+                                <td id="tdDate"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+           
+        </details>
+
+        <details class="blockAusblenden" id="detailsSensors">
+
+            <summary class="flexboxRow">
+                <div>Sensor-related data
+
+                </div>
+            </summary>
+            <div class="single_page_subcontainer subcontainer_inside_details ">
+                <span>Select Sensor</span>
+
+                <div class="containerSensor">
+                    <div class="sensor-type" data-type="temperature">
+                        Bridge weigh-in-motion sensors
+                        <img src="images/sensor.svg" alt="Sensor Icon">
+                        <div class="sensor-list">
+                            <div class="sensor-item" data-id="1">Sensor A</div>
+                            <div class="sensor-item" data-id="2">Sensor B</div>
+                        </div>
+                    </div>
+                    <div class="sensor-type" data-type="pressure">
+                       Temperature sensors
+                        <img src="images/sensor.svg" alt="Sensor Icon">
+                        <div class="sensor-list">
+                            <div class="sensor-item" data-id="3">Sensor C</div>
+                            <div class="sensor-item" data-id="4">Sensor D</div>
+                        </div>
+                    </div>
+                    <div class="sensor-type" data-type="humidity">
+                        Accelerometers
+                        <img src="images/sensor.svg" alt="Sensor Icon">
+                        <div class="sensor-list">
+                            <div class="sensor-item" data-id="5">Sensor E</div>
+                            <div class="sensor-item" data-id="6">Sensor F</div>
+                        </div>
+                    </div>
+                    <div class="sensor-type" data-type="light">
+                        Leakage sensors
+                        <img src="images/sensor.svg" alt="Sensor Icon">
+                        <div class="sensor-list">
+                            <div class="sensor-item" data-id="7">Sensor G</div>
+                            <div class="sensor-item" data-id="8">Sensor H</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="single_page_subcontainer subcontainer_inside_details ">
+                <span>Sensor-related data
+                </span>
+                <div id="sensor-info">Sensor details will be shown here.</div>
+            </div>
+
+        </details>
+
+        <details class="blockAusblenden" id="detailsVehicle">
+            <summary class="flexboxRow">
+                <div>Vehicle-related data
+                </div>
+            </summary>
+
+            <div class="single_page_subcontainer subcontainer_inside_details ">
+                <span>Vehicle-related data
+                </span>
+
+            </div>
+
+
+        </details>
+
+    </div>
+</body>
+
+<!-- <script src="../js/immissionsschutz.js"></script> -->
+<script src="../js/Immissionsschutz/allgemein.js"></script>
+<script src="../js/Immissionsschutz/inhaltlicheKorrektheit.js"></script>
+<script src="../js/Immissionsschutz/inhaltlicheVollstaendigkeit.js"></script>
+<script src="../js/general.js"></script>
+<script src="js/index.js"></script>
+
+
+</html>
