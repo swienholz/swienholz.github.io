@@ -12,7 +12,7 @@ addEventListener("desiteload", async function (event) {
         await loginInfoHub()
 
     } else {
-        await desiteAPI.redirectUrl('https://swienholz.github.io/desite.modules/indexNEW.html','file:///C:/BIM4CE/BIM4CE/desite.modules/indexNEW.html') 
+        desiteMD.redirectUrl('https://swienholz.github.io/desite.modules/indexNEW.html','file:///C:/BIM4CE/BIM4CE/desite.modules/indexNEW.html') 
     }
 
    console.log( window.localStorage.getItem('user'),
@@ -37,7 +37,14 @@ $(document).ready(function() {
 
 async function loginInfoHub() {
 	window.location.href = "https://swienholz.github.io/desite.modules/indexNEW.html?token=" + sessionStorage.getItem("token");
-
+    setTimeout(() => {
+        const token = sessionStorage.getItem("token");
+        if (token) {
+            window.location.href = "https://swienholz.github.io/desite.modules/indexNEW.html?token=" + token;
+        } else {
+            console.error("Token nicht gefunden!");
+        }
+    }, 500); 
 }
 // handleRedirectInfoHub() 
 function handleRedirectInfoHub() {
