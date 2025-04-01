@@ -7,12 +7,12 @@ addEventListener("desiteload", async function (event) {
     console.log( window.localStorage.getItem('user'),
     window.localStorage.getItem('token')    )
     handleRedirectInfoHub() 
-console.log(window.location.href.toString())
+
     if(!window.location.href.toString().includes('swienholz')){
         await loginInfoHub()
 
     } else {
-        window.location.href = 'file:///C:/BIM4CE/BIM4CE/desite.modules/indexNEW.html'
+        await desiteAPI.redirectUrl('https://swienholz.github.io/desite.modules/indexNEW.html','file:///C:/BIM4CE/BIM4CE/desite.modules/indexNEW.html') 
     }
 
    console.log( window.localStorage.getItem('user'),
@@ -108,5 +108,6 @@ function getTokenFromUrl() {
 
 const token = getTokenFromUrl();
 if (token) {
+    console.log('token',token)
     sessionStorage.setItem("token", token); // Speichert den Token wieder im sessionStorage
 }
