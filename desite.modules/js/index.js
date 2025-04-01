@@ -1,3 +1,20 @@
+
+// doOnLoad
+addEventListener("desiteload", async function (event) {
+    var heute = new Date().toLocaleString();
+
+    // spApiModell = await desiteAPI.getRootNodeByModel((await desiteAPI.getModelListByName('SP_API', 'res'))[0]);
+    console.log( window.localStorage.getItem('user'),
+    window.localStorage.getItem('token')    )
+    // handleRedirectInfoHub() 
+
+   await loginInfoHub()
+
+   console.log( window.localStorage.getItem('user'),
+   window.localStorage.getItem('token')    )
+
+});
+
 $(document).ready(function() {
     $('.sensor-type').click(function() {
         $('.sensor-type, .sensor-item').removeClass('highlight-type highlight-sensor');
@@ -12,3 +29,75 @@ $(document).ready(function() {
         $('#sensor-info').text('Details about sensor ' + $(this).data('id'));
     });
 });
+
+async function loginInfoHub() {
+	window.location.href = encodeURI("https://colneo.services/cn_login/?redirect=" + "https://swienholz.github.io/desite.modules/indexNEW.html"+ window.location.search);
+    console.log(window.localStorage)
+    console.log(window.location.search)
+    console.log(window.localStorage.getItem('user')   )
+    console.log(window.localStorage.getItem('token')   )
+    console.log(window.sessionStorage.getItem('user')   )
+    console.log(window.sessionStorage.getItem('token')   )
+    // handleRedirectInfoHub()
+}
+
+function handleRedirectInfoHub() {
+    const queryString = window.location.search;
+    const params = new URLSearchParams(queryString);
+    // const token = params.get("token");
+
+    var user  = $('#iptUser').val()
+    // var token = JSON.parse(response.responseText)['token']
+    console.log(JSON.stringify(params), token)
+    console.log(window.location.search);
+
+    // var queryString = window.location.search;
+        
+      var  urlParams = new URLSearchParams(queryString);
+        
+        var redir   = urlParams.get("redirect")
+        var userid  = urlParams.get("userid")
+        
+        // if( redir != undefined ) {
+        //     service_url.redirect = redir
+        // } else {
+        //     service_url.redirect = null
+        // }
+        
+        
+        //
+        // if user was sent in URL set user to input field ...
+
+        if ( userid == null || userid == '' ) {
+            userid = ''            
+        } 
+        
+        console.log("user id: " + userid )
+
+       
+                
+        user  = window.localStorage.getItem('user')
+       var token = window.localStorage.getItem('token')   
+
+        console.log(JSON.stringify(window.sessionStorage))
+
+        console.log(window.location.href);
+
+    if (token) {
+        // Token speichern
+        var sessionStorage
+        sessionStorage.setItem('accessToken', token);
+        sessionStorage.setItem("user", params.get("user_id"));
+
+        // Token aus der URL entfernen
+        params.delete('token');
+        params.delete("user_id");
+
+        // URL ohne Token aktualisieren
+        const newUrl = `${window.location.pathname}?${params.toString()}`;
+        window.history.replaceState({}, document.title, newUrl);
+
+        // ✅ Ändere die URL auf den lokalen Server
+        window.location.href = "https://swienholz.github.io/desite.modules/indexNEW.html";
+    }
+}
