@@ -1,12 +1,14 @@
+var namePC
+var heute
 
 // doOnLoad
 addEventListener("desiteload", async function (event) {
-    var heute = new Date().toLocaleString();
-
+  
+    await setNameandDate()
     // spApiModell = await desiteAPI.getRootNodeByModel((await desiteAPI.getModelListByName('SP_API', 'res'))[0]);
     console.log( window.localStorage.getItem('user'),
     window.localStorage.getItem('token')    )
-    handleRedirectInfoHub() 
+    // handleRedirectInfoHub() 
 
     if(!window.location.href.toString().includes('swienholz')){
         await loginInfoHub()
@@ -19,6 +21,23 @@ addEventListener("desiteload", async function (event) {
    window.localStorage.getItem('token')    )
 
 });
+
+async function setNameandDate(){
+    heute = new Date().toLocaleString();
+    // Username
+  namePC = await desiteAPI.getUserName();
+  let abkuerzung = namePC.substring(1, 2)
+  let spanUser = document.getElementById('userSpan')
+  let divUser = document.getElementById('userAuswahl')
+  divUser.title = "User settings: " + namePC
+  spanUser.innerHTML = abkuerzung
+
+  document.getElementById('spanProjectname').innerHTML = 'Tomacevo'
+  document.getElementById('spanProjectdate').innerHTML = heute
+
+  document.getElementById('tdBridgeName').innerHTML = 'Tomacevo'
+  document.getElementById('tdDate').innerHTML = heute
+}
 
 $(document).ready(function() {
     $('.sensor-type').click(function() {
