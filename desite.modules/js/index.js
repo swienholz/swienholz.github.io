@@ -31,16 +31,10 @@ $(document).ready(function() {
 });
 
 async function loginInfoHub() {
-	window.location.href = encodeURI("https://colneo.services/cn_login/?redirect=" + "https://swienholz.github.io/desite.modules/indexNEW.html"+ window.location.search);
-    console.log(window.localStorage)
-    console.log(window.location.search)
-    console.log(window.localStorage.getItem('user')   )
-    console.log(window.localStorage.getItem('token')   )
-    console.log(window.sessionStorage.getItem('user')   )
-    console.log(window.sessionStorage.getItem('token')   )
-    // handleRedirectInfoHub()
-}
+	window.location.href = "https://swienholz.github.io/desite.modules/indexNEW.html?token=" + sessionStorage.getItem("token");
 
+}
+handleRedirectInfoHub() 
 function handleRedirectInfoHub() {
     const queryString = window.location.search;
     const params = new URLSearchParams(queryString);
@@ -100,4 +94,14 @@ function handleRedirectInfoHub() {
         // ✅ Ändere die URL auf den lokalen Server
         window.location.href = "https://swienholz.github.io/desite.modules/indexNEW.html";
     }
+}
+
+function getTokenFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("token");
+}
+
+const token = getTokenFromUrl();
+if (token) {
+    sessionStorage.setItem("token", token); // Speichert den Token wieder im sessionStorage
 }
