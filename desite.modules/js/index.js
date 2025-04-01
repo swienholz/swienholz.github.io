@@ -7,8 +7,8 @@ addEventListener("desiteload", async function (event) {
     console.log( window.localStorage.getItem('user'),
     window.localStorage.getItem('token')    )
     handleRedirectInfoHub() 
-
-    if(!window.location.href.toString().includes('')){
+console.log(window.location.href.toString())
+    if(!window.location.href.toString().includes('swienholz')){
         await loginInfoHub()
 
     } else {
