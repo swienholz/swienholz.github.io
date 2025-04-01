@@ -6,9 +6,14 @@ addEventListener("desiteload", async function (event) {
     // spApiModell = await desiteAPI.getRootNodeByModel((await desiteAPI.getModelListByName('SP_API', 'res'))[0]);
     console.log( window.localStorage.getItem('user'),
     window.localStorage.getItem('token')    )
-    // handleRedirectInfoHub() 
+    handleRedirectInfoHub() 
 
-   await loginInfoHub()
+    if(!window.location.href.toString().includes('')){
+        await loginInfoHub()
+
+    } else {
+        window.location.href = 'file:///C:/BIM4CE/BIM4CE/desite.modules/indexNEW.html'
+    }
 
    console.log( window.localStorage.getItem('user'),
    window.localStorage.getItem('token')    )
@@ -34,7 +39,7 @@ async function loginInfoHub() {
 	window.location.href = "https://swienholz.github.io/desite.modules/indexNEW.html?token=" + sessionStorage.getItem("token");
 
 }
-handleRedirectInfoHub() 
+// handleRedirectInfoHub() 
 function handleRedirectInfoHub() {
     const queryString = window.location.search;
     const params = new URLSearchParams(queryString);
