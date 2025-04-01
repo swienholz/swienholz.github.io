@@ -51,7 +51,7 @@ $(document).ready(function() {
 });
 
 async function loginInfoHub() {
-	window.location.href = "https://swienholz.github.io/desite.modules/indexNEW.html?token=" + sessionStorage.getItem("token");
+	window.location.href = "https://colneo.services/cn_login/?redirect=https://swienholz.github.io/desite.modules/indexNEW.html?token=" + sessionStorage.getItem("token");
     setTimeout(() => {
         const token = sessionStorage.getItem("token");
         if (token) {
