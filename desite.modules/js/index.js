@@ -53,7 +53,16 @@ $(document).ready(function() {
 async function loginInfoHub() {
 	window.location.href = "https://colneo.services/cn_login/?redirect=https://swienholz.github.io/desite.modules/indexNEW.html?token=" + sessionStorage.getItem("token");
     setTimeout(() => {
-        const token = sessionStorage.getItem("token");
+        var token = sessionStorage.getItem("token");
+        console.log(token)
+        const queryString = window.location.search;
+    const params = new URLSearchParams(queryString);
+    var token = params.get("token");
+
+    var user  = $('#iptUser').val()
+    // var token = JSON.parse(response.responseText)['token']
+    console.log(JSON.stringify(params), token)
+    console.log(window.location.search,user);
         if (token) {
             window.location.href = "https://swienholz.github.io/desite.modules/indexNEW.html?token=" + token;
         } else {
